@@ -12,6 +12,14 @@ hyper i hyperline
 hyper i hyper-custom-controls
 ```
 
+### Setup dot dotfiles
+```sh
+git clone --recurse-submodules git@github.com:PrinceHard/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+ln -s ~/.dotfiles/starship.toml ~/.config/starship.toml
+ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+```
+
 ### Instalando fish shell
 ```sh
 sudo apt-add-repository ppa:fish-shell/release-3
@@ -23,6 +31,12 @@ sudo apt install fish
 ```sh
 /bin/fish -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 #seguir os passos seguintes para adicionar o brew ao PATH
+```
+
+### Instalando e Configurando plugins fish:
+```sh
+brew install exa
+#configure exa executing script
 ```
 
 ### Instalando Starship
@@ -45,13 +59,7 @@ starship preset plain-text-symbols > ~/.config/starship.toml
 # More documentation:
 https://starship.rs/config/#configuration
 ```
-### Setup dot dotfiles
-```sh
-git clone --recurse-submodules git@github.com:PrinceHard/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
-ln -s ~/.dotfiles/starship.toml ~/.config/starship.toml
-ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
-```
+
 ### Install asdf and langs
 ```sh
 #Install dependencies
