@@ -21,7 +21,7 @@ sudo apt install fish
 ```
 ### Instalando Homebrew
 ```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/fish -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 #seguir os passos seguintes para adicionar o brew ao PATH
 ```
 
@@ -45,6 +45,34 @@ starship preset plain-text-symbols > ~/.config/starship.toml
 # More documentation:
 https://starship.rs/config/#configuration
 ```
+### Setup dot dotfiles
+```sh
+git clone --recurse-submodules git@github.com:PrinceHard/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+ln -s ~/.dotfiles/starship.toml ~/.config/starship.toml
+ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+```
+### Install asdf and langs
+```sh
+#Install dependencies
+brew install coreutils curl git
+
+#Official install
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
+
+#Add the following to ~/.config/fish/config.fish:
+source ~/.asdf/asdf.fish
+
+#Completions must be configured manually with the following command:
+mkdir -p ~/.config/fish/completions; and ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+
+#Install plugins:
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+
+#Doc:
+https://asdf-vm.com/
+```
+
 
 
 
